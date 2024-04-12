@@ -9,7 +9,7 @@ datasource db {
 
 model Safra {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
-  planta      Int
+  planta      Int @unique
   umidade     Float
   temperatura Float
   solo        Int
