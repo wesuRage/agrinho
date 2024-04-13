@@ -13,4 +13,5 @@ model Safra {
   umidade     Float
   temperatura Float
   solo        Int
+  automatico  Boolean
 }

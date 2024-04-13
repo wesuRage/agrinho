@@ -14,6 +14,7 @@ export async function POST(request: Request) {
         umidade: 0,
         temperatura: 0,
         solo: 0,
+        automatico: true,
       },
     });
 
@@ -32,7 +33,8 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {
   try {
-    const { planta, umidade, temperatura, solo } = await request.json();
+    const { planta, umidade, temperatura, solo, automatico } =
+      await request.json();
 
     await connectToDatabase();
 
@@ -45,6 +47,7 @@ export async function PUT(request: Request) {
         umidade,
         temperatura,
         solo,
+        automatico,
       },
     });
 
