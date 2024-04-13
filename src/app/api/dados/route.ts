@@ -60,9 +60,7 @@ export async function GET() {
   try {
     await connectToDatabase();
 
-    const data = await prisma.safra.findMany();
-
-    return NextResponse.json({ data }, { status: 200 });
+    return NextResponse.json(await prisma.safra.findMany(), { status: 200 });
   } catch (error) {
     console.log(error);
 
