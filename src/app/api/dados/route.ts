@@ -15,6 +15,7 @@ export async function POST(request: Request) {
         temperatura: 0,
         solo: 0,
         automatico: true,
+        regar: false,
       },
     });
 
