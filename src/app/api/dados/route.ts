@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     await connectToDatabase();
 
-    prisma.safra.create({
+    await prisma.safra.create({
       data: {
         planta,
         umidade: 0,
