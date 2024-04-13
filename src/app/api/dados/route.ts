@@ -47,6 +47,11 @@ export async function PUT(request: Request) {
         solo,
       },
     });
+
+    return NextResponse.json(
+      { message: "Planta atualizada com sucesso" },
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error);
 
