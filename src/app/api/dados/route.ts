@@ -79,3 +79,28 @@ export async function GET() {
     await prisma.$disconnect();
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { planta } = await request.json();
+
+    await connectToDatabase();
+
+    await prisma.safra.delete({
+      where: {
+        planta,
+      },
+    });
+
+    return NextResponse.json(
+      { message: "Planta deletada com sucesso" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.log(error);
+
+    return NextResponse.json({ message: "Server Error" }, { status: 500 });
+  } finally {
+    await prisma.$disconnect();
+  }
+}
