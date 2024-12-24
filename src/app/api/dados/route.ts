@@ -60,7 +60,7 @@ export async function PUT(request: Request) {
   } catch (error) {
     console.log(error);
 
-    return NextResponse.json({ message: "Server Error" }, { status: 500 });
+    return NextResponse.json({ message: error }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }
